@@ -13,11 +13,7 @@
 
 @import '_roboto';
 
-/*
- * Visual Style Guide styles
- * Remove if you prefer to use a CSS library, like Bootstrap
- */
-@import 'components/components';
+
 
 html,
 body {
@@ -28,5 +24,7 @@ body {
 }
 
 .navbar-header {
-    padding:9px;
+    padding-left:2em;
 }
+
+
