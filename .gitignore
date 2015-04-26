@@ -9,4 +9,5 @@ web/styles/components/
 web/styles/packages/
 web/styles/_h5bp.scss
 web/styles/_roboto.scss
-web/styles/main_gen.scss
+web/styles/main_gen.css
+
