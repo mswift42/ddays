@@ -1,0 +1,12 @@
+.buildlog
+.DS_Store
+.idea
+.pub/
+build/
+packages
+pubspec.lock
+web/styles/components/
+web/styles/packages/
+web/styles/_h5bp.scss
+web/styles/_roboto.scss
+web/styles/main_gen.scss
