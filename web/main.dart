@@ -8,8 +8,7 @@ import 'package:ddays/reverser.dart';
 import 'package:route_hierarchical/client.dart';
 
 void main() {
-  initNavMenu();
-  initReverser();
+//  initNavMenu();
 
   // Webapps need routing to listen for changes to the URL.
   var router = new Router();
