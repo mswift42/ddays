@@ -4,11 +4,10 @@
 import 'dart:html';
 
 import 'package:ddays/nav_menu.dart';
-import 'package:ddays/reverser.dart';
 import 'package:route_hierarchical/client.dart';
 
 void main() {
-//  initNavMenu();
+  initNavMenu();
 
   // Webapps need routing to listen for changes to the URL.
   var router = new Router();
