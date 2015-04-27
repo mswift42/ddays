@@ -12,7 +12,7 @@ class Task {
   String summary;
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
-  List<String> taskcategories = [];
+  Set<String> taskcategories = new Set();
   Task(this.summary, this.scheduled);
 
   void addNote(TaskNote note) {
