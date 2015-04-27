@@ -1,9 +1,17 @@
 
 library singletask;
 
+
+
 class Task {
   String summary;
   List<String> tasknotes = [];
   DateTime scheduled;
-  Task(this.summary);
+  String status;
+  Task(this.summary, this.scheduled, this.status);
+
+  void addNote(String note) {
+    tasknotes.add(note);
+  }
 }
+
