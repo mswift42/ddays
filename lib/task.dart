@@ -1,16 +1,21 @@
 
 library task;
 
+class TaskNote {
+  String notebody;
+  TaskNote(this.notebody);
+}
+
 
 
 class Task {
   String summary;
-  List<String> tasknotes = [];
+  List<TaskNote> tasknotes = [];
   DateTime scheduled;
-  String status;
-  Task(this.summary, this.scheduled, this.status);
+  List<String> status = [];
+  Task(this.summary, this.scheduled);
 
-  void addNote(String note) {
+  void addNote(TaskNote note) {
     tasknotes.add(note);
   }
 }
