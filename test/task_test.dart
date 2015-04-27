@@ -12,8 +12,9 @@ void main() {
   });
   test('addNote should add notes to tasknotes list.', () {
     var t1 = new Task('task1', null);
-    t1.addNote('first note');
-    expect(t1.tasknotes[0], 'first note');
+       var n1 = new TaskNote('first note');
+       t1.addNote(n1);
+       expect(t1.tasknotes[0].notebody, 'first note');
   });
  
 }
