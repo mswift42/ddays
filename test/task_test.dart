@@ -22,6 +22,7 @@ void main() {
     expect(t1.taskcategories.contains('work'), true);
     t1.addCategory('travel');
     expect(t1.taskcategories.contains('travel'), true);
+    expect(t1.taskcategories.length,2);
   });
   test('removeCategory should remove the correct category', () {
     var t1 = new Task('task1', null);
@@ -36,6 +37,8 @@ void main() {
     t1.removeCategory('private');
     expect(t1.taskcategories.contains('private'),false);
     expect(t1.taskcategories.contains('travel'), true);
+    t1.removeCategory('travel');
+    expect(t1.taskcategories.length,0);
   });
  
 }
