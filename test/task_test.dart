@@ -16,6 +16,13 @@ void main() {
        t1.addNote(n1);
        expect(t1.tasknotes[0].notebody, 'first note');
   });
+  test('addCategory shoud add a category to taskcategories', () {
+    var t1 = new Task('task1', null);
+    t1.addCategory('work');
+    expect(t1.taskcategories.contains('work'), true);
+    t1.addCategory('travel');
+    expect(t1.taskcategories.contains('travel'), true);
+  });
  
 }
     
