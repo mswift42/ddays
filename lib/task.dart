@@ -12,8 +12,11 @@ class Task {
   String summary;
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
+  int timestamp;
   Set<String> taskcategories = new Set();
-  Task(this.summary, this.scheduled);
+  Task(this.summary, this.scheduled) {
+    this.timestamp = new DateTime.now().millisecond;
+  }
 
   void addNote(TaskNote note) {
     tasknotes.add(note);
