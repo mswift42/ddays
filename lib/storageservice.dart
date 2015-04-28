@@ -9,3 +9,7 @@ void saveToStorage(storedlist, item, name) {
   window.localStorage[name] = JSON.encode(item);
 }
 
+List loadFromStorage(name) {
+  return JSON.decode(window.localStorage[name]);
+}
+
