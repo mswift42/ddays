@@ -24,3 +24,7 @@ void deleteItemInStorage(item) {
   window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);  
 }
 
+// delete localStorage key.
+void deleteStorage() {
+  window.localStorage.clear();
+}
