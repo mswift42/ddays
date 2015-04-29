@@ -10,6 +10,11 @@ void main() {
     var t2 = new Task('task2', new DateTime(2015,1,1));
     expect(t2.scheduled.month, 1);
   });
+  test('the timestamp of a newer Task should bigger than the older one',() {
+    var t1 = new Task('task1', null);
+    var t2 = new Task('task2', null);
+    expect(t1.timestamp <= t2.timestamp, true);
+  });
   test('addNote should add notes to tasknotes list.', () {
     var t1 = new Task('task1', null);
        var n1 = new TaskNote('first note');
