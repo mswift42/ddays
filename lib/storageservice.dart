@@ -9,7 +9,7 @@ final String STORAGE_KEY = 'ddays';
 // this list in localStorage with the key 'STORAGE_KEY'.
 void saveToStorage(storedlist, item) {
   storedlist.add(item);
-  window.localStorage[STORAGE_KEY] = JSON.encode(item);
+  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
 }
 
 // restore a to localstorage, under key 'STORAGE_KEY',
@@ -18,7 +18,9 @@ List loadFromStorage() {
   return JSON.decode(window.localStorage[STORAGE_KEY]);
 }
 
-// delete a local Storage object with key 'STORAGE_KEY'.
-void deleteItemInStorage(storedlist, item) {
+// delete a item from local Storage object with key 'STORAGE_KEY'.
+void deleteItemInStorage(item) {
+  var storedlist = loadFromStorage().where((i) => i.timestamp == item.timestamp);
+  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);  
 }
 
