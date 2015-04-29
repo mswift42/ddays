@@ -15,7 +15,7 @@ class Task {
   int timestamp;
   Set<String> taskcategories = new Set();
   Task(this.summary, this.scheduled) {
-    this.timestamp = new DateTime.now().millisecond;
+    this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
 
   void addNote(TaskNote note) {
