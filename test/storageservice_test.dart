@@ -10,4 +10,9 @@ void initStorage() {
   
 
 void main() {
-  test('
+  initStorage();
+  var tasks = [];
+  saveToStorage(tasks, {'summary':'task1'});
+  var restored = loadFromStorage();
+  expect(restored[0]['summary'], 'task1');
+}
