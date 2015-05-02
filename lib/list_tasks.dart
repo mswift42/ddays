@@ -2,7 +2,7 @@ library list_tasks;
 
 import 'dart:html';
 import 'package:ddays/storageservice.dart' show loadFromStorage;
-import 'package:ddays/tasks.dart' show tasklist;
+
 
 LIElement singletask(String tasksummary) {
   LIElement li = new LIElement();
@@ -20,7 +20,7 @@ LIElement singletask(String tasksummary) {
 // element to div '#listtasks'.
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
+  List tasklist = loadFromStorage();
   tasklist.forEach((i) => div.append(singletask(i['summary'])));
-  
-  
+    
 }
