@@ -17,7 +17,8 @@ void saveToStorage(item) {
 // restore a to localstorage, under key 'STORAGE_KEY',
 // saved List.
 List loadFromStorage() {
-  return JSON.decode(window.localStorage[STORAGE_KEY]);
+  tasklist = JSON.decode(window.localStorage[STORAGE_KEY]);
+  return tasklist;
 }
 
 // delete a item from local Storage object with key 'STORAGE_KEY'.
