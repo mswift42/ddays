@@ -11,7 +11,7 @@ List tasklist = [];
 // this list in localStorage with the key 'STORAGE_KEY'.
 void saveToStorage(item) {
   tasklist.add(item);
-  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
+  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
 }
 
 // restore a to localstorage, under key 'STORAGE_KEY',
