@@ -5,10 +5,12 @@ import 'dart:convert';
 
 final String STORAGE_KEY = 'ddays';
 
+List tasklist = [];
+
 // add an item to a given List, then save
 // this list in localStorage with the key 'STORAGE_KEY'.
-void saveToStorage(storedlist, item) {
-  storedlist.add(item);
+void saveToStorage(item) {
+  tasklist.add(item);
   window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
 }
 
