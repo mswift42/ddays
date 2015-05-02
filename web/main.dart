@@ -5,6 +5,8 @@ import 'dart:html';
 
 import 'package:ddays/nav_menu.dart';
 import 'package:route_hierarchical/client.dart';
+import 'package:ddays/list_tasks.dart' show singletask, displayTasks;
+
 
 void main() {
   initNavMenu();
@@ -15,6 +17,7 @@ void main() {
     ..addRoute(name: 'about', path: '/about', enter: showAbout)
     ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
   router.listen();
+  displayTasks();
 }
 
 void showAbout(RouteEvent e) {
