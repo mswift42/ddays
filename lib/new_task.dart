@@ -8,11 +8,13 @@ import 'package:ddays/list_tasks.dart' show displayTasks;
 
 void saveTaskHandler(Event e) {
   e.preventDefault();
-  print(e);
   InputElement summary = querySelector('[name="tsummary"]');
+  print(tasks);
+  if (summary.value.trim() != '') {
   Task task = new Task(summary.value.trim());
   saveToStorage({"summary": task.summary,
     "scheduled" : task.scheduled, "timestamp" : task.timestamp});
+  } 
   summary.value = '';
   displayTasks();
   
