@@ -23,3 +23,8 @@ void displayTasks() {
   tasklist.forEach((i) => div.append(singletask(i['summary'])));
     
 }
+
+void insertTask(String tasksummary) {
+  LIElement st = singletask(tasksummary);
+  querySelector('#listtasks').children.insert(0,st);
+}
