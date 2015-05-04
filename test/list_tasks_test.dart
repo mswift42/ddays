@@ -26,5 +26,8 @@ void main() {
     var retrieved = querySelector('.singletask');
     expect(retrieved.children[0].text, 'more tasks');
   });
+  test('3 singleTaskElements should have been inserted', () {
+    expect(querySelectorAll('.singletask').length,3);
+  });
   
 }
