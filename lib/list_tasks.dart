@@ -4,7 +4,7 @@ import 'dart:html';
 import 'package:ddays/storageservice.dart' show loadFromStorage;
 
 
-LIElement singletask(String tasksummary) {
+LIElement singleTaskElement(String tasksummary) {
   LIElement li = new LIElement();
   ParagraphElement p = new ParagraphElement();
   p
@@ -21,11 +21,11 @@ LIElement singletask(String tasksummary) {
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
   List tl = loadFromStorage();
-  tl.forEach((i) => div.append(singletask(i['summary'])));
+  tl.forEach((i) => div.append(singleTaskElement(i['summary'])));
     
 }
-
+// insert Task into displayed tasklist at index 0;
 void insertTask(String tasksummary) {
-  LIElement st = singletask(tasksummary);
+  LIElement st = singleTaskElement(tasksummary);
   querySelector('#listtasks').children.insert(0,st);
 }
