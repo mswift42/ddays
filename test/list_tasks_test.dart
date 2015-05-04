@@ -13,5 +13,18 @@ void main() {
   expect(st2.children[0].text, '');
   expect(st2.children[0].classes.contains('summarytext'),true);
   });
+  test('insertTask should prepend a singleTaskElement into #listtasks children.',() {
+    insertTask('some task');
+    var li = querySelector('#listtasks').children[0];
+    expect(li.children[0].text, 'some task');
+    insertTask('other task');
+    var li2 = querySelector('#listtasks').children[0];
+    expect(li2.children[0].text, 'other task');
+  });
+  test('inserted tasks should be retrievable by their classname "singletask"', () {
+    insertTask('more tasks');
+    var retrieved = querySelector('.singletask');
+    expect(retrieved.children[0].text, 'more tasks');
+  });
   
 }
