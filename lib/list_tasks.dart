@@ -3,6 +3,9 @@ library list_tasks;
 import 'dart:html';
 import 'package:ddays/storageservice.dart' show loadFromStorage;
 
+// singleTaskElement returns a List Element that has
+//  a paragraphelement as a child node. The text of 
+// the paragraphelement is set to the parameter 'tasksummary'.
 LIElement singleTaskElement(String tasksummary) {
   LIElement li = new LIElement();
   ParagraphElement p = new ParagraphElement();
@@ -15,6 +18,9 @@ LIElement singleTaskElement(String tasksummary) {
   return li;
 }
 
+// editTaskElement returns a List Element that as an 
+// TextInput Element as a child node. The value of
+//  the textinput element is set to the given parameter tasksummary.
 LIElement editTaskElement(String tasksummary) {
   LIElement li = new LIElement();
   TextInputElement ti = new TextInputElement();
@@ -28,6 +34,8 @@ LIElement editTaskElement(String tasksummary) {
   return li;
 }
 
+// taskContainer returns a Div Element with the
+// child nodes of singleTaskElement and editTaskElement.
 DivElement taskContainer(String tasksummary) {
   DivElement div = new DivElement();
   div
