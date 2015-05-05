@@ -34,7 +34,10 @@ LIElement editTaskElement(String tasksummary) {
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
   List tl = loadFromStorage();
-  tl.forEach((i) => div.append(singleTaskElement(i['summary'])));
+  tl.forEach((i) {
+    div.append(singleTaskElement(i['summary']));
+    div.append(editTaskElement(i['summary']));
+  });
     
 }
 // insert Task into displayed tasklist at index 0;
