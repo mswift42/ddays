@@ -49,6 +49,6 @@ void displayTasks() {
 }
 // insert Task into displayed tasklist at index 0;
 void insertTask(String tasksummary) {
-  LIElement st = singleTaskElement(tasksummary);
-  querySelector('#listtasks').children.insert(0, st);
+  DivElement div = taskContainer(tasksummary);
+  querySelector('#listtasks').children.insert(0, div);
 }
