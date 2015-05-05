@@ -29,9 +29,6 @@ void main() {
     var retrieved = querySelector('.singletask');
     expect(retrieved.children[0].text, 'more tasks');
   });
-  test('3 singleTaskElements should have been inserted', () {
-    expect(querySelectorAll('.singletask').length,3);
-  });
   test('editTaskElement returns a li element', () {
     var et = editTaskElement('t1');
     expect(et is LIElement, true);
@@ -43,5 +40,6 @@ void main() {
     expect(et.children[0].value, 't1');
     expect(et.children[0].classes.contains('summarytext'), true);    
   });
+  
   
 }
