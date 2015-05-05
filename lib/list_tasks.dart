@@ -24,7 +24,7 @@ LIElement editTaskElement(String tasksummary) {
     ..classes.add('summarytext');
   li
     ..classes.add('singletask')
-    ..casses.add('hideedittask')
+    ..classes.add('hideedittask')
     ..append(ti);
   return li;
 }
