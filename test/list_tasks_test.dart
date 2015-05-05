@@ -29,5 +29,9 @@ void main() {
   test('3 singleTaskElements should have been inserted', () {
     expect(querySelectorAll('.singletask').length,3);
   });
+  test('editTaskElement returns a li element', () {
+    var et = editTaskElement('t1');
+    expect(et is LIElement, true);
+  });
   
 }
