@@ -1,9 +1,12 @@
-
 import 'package:ddays/list_tasks.dart';
 import 'package:test/test.dart';
 import 'dart:html';
 
 void main() {
+  test('singleTaskElement returns a LIElement', () {
+    var li = singleTaskElement('t0');
+    expect(li is LIElement, true);
+  });
   test('sinlgeTaskElement returns a LIElement with correct p children', () {
   LIElement st = singleTaskElement('task1');
   expect(st.children[0].text, 'task1');
