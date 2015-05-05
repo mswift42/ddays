@@ -17,14 +17,17 @@ void saveToStorage(item) {
 // restore a to localstorage, under key 'STORAGE_KEY',
 // saved List.
 List loadFromStorage() {
-  tasklist = JSON.decode(window.localStorage[STORAGE_KEY]);
+  tasklist = window.localStorage.containsKey(STORAGE_KEY)
+      ? JSON.decode(window.localStorage[STORAGE_KEY])
+      : [];
   return tasklist;
 }
 
 // delete a item from local Storage object with key 'STORAGE_KEY'.
 void deleteItemInStorage(item) {
-  var storedlist = loadFromStorage().where((i) => i.timestamp == item.timestamp);
-  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);  
+  var storedlist =
+      loadFromStorage().where((i) => i.timestamp == item.timestamp);
+  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
 }
 
 // delete localStorage key.
