@@ -16,6 +16,19 @@ LIElement singleTaskElement(String tasksummary) {
   return li;
 }
 
+LIElement editTaskElement(String tasksummary) {
+  LIElement li = new LIElement();
+  TextInputElement ti = new TextInputElement();
+  ti
+    ..value = tasksummary
+    ..classes.add('summarytext');
+  li
+    ..classes.add('singletask')
+    ..casses.add('hideedittask')
+    ..append(ti);
+  return li;
+}
+
 // append for each task in tasks a singletask
 // element to div '#listtasks'.
 void displayTasks() {
