@@ -3,12 +3,11 @@ library list_tasks;
 import 'dart:html';
 import 'package:ddays/storageservice.dart' show loadFromStorage;
 
-
 LIElement singleTaskElement(String tasksummary) {
   LIElement li = new LIElement();
   ParagraphElement p = new ParagraphElement();
   p
-   ..text = tasksummary
+    ..text = tasksummary
     ..classes.add('summarytext');
   li
     ..classes.add('singletask')
@@ -29,6 +28,15 @@ LIElement editTaskElement(String tasksummary) {
   return li;
 }
 
+DivElement taskContainer(String tasksummary) {
+  DivElement div = new DivElement();
+  div
+    ..classes.add('taskcontainer')
+    ..append(singleTaskElement(tasksummary))
+    ..append(editTaskElement(tasksummary));
+  return div;
+}
+
 // append for each task in tasks a singletask
 // element to div '#listtasks'.
 void displayTasks() {
@@ -38,10 +46,9 @@ void displayTasks() {
     div.append(singleTaskElement(i['summary']));
     div.append(editTaskElement(i['summary']));
   });
-    
 }
 // insert Task into displayed tasklist at index 0;
 void insertTask(String tasksummary) {
   LIElement st = singleTaskElement(tasksummary);
-  querySelector('#listtasks').children.insert(0,st);
+  querySelector('#listtasks').children.insert(0, st);
 }
