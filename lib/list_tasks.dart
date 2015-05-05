@@ -37,16 +37,14 @@ DivElement taskContainer(String tasksummary) {
   return div;
 }
 
-// append for each task in tasks a singletask
+// append for each task in tasks a taskContainer 
 // element to div '#listtasks'.
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
   List tl = loadFromStorage();
-  tl.forEach((i) {
-    div.append(singleTaskElement(i['summary']));
-    div.append(editTaskElement(i['summary']));
-  });
+  tl.forEach((i) => div.append(taskContainer(i['summary'])));
 }
+
 // insert Task into displayed tasklist at index 0;
 void insertTask(String tasksummary) {
   DivElement div = taskContainer(tasksummary);
