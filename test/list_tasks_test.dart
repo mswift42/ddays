@@ -36,5 +36,12 @@ void main() {
     var et = editTaskElement('t1');
     expect(et is LIElement, true);
   });
+  test('editTaskElement returns a LIElement with an textinput children.', () {
+    var et = editTaskElement('t1');
+    expect(et.classes.contains('singletask'), true);
+    expect(et.classes.contains('hideedittask'), true);
+    expect(et.children[0].value, 't1');
+    expect(et.children[0].classes.contains('summarytext'), true);    
+  });
   
 }
