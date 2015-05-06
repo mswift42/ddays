@@ -15,7 +15,10 @@ LIElement singleTaskElement(String tasksummary) {
   li
     ..classes.add('singletask')
     ..onClick
-        .listen((e) => li.parent.children[1].classes.toggle('hideedittask'))
+        .listen((e) {
+    li.parent.children[1].classes.toggle('hideedittask');
+    li.classes.toggle('hidesingletask');
+  })
     ..append(p);
   return li;
 }
