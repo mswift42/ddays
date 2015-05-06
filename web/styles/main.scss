@@ -237,7 +237,17 @@ main {
 
 sass-hidden {		
     display: none;		
-}		
+}
+
+.hideedittask {
+    display: none;
+}
+
+.hidesingletask {
+    display: none;
+}
+
+
 
 /** Larger Screens - desktops and tablets **/		
 @media all and (min-width: 990px) {		
