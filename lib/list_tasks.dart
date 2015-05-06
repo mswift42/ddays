@@ -41,7 +41,9 @@ DivElement taskContainer(String tasksummary) {
   div
     ..classes.add('taskcontainer')
     ..append(singleTaskElement(tasksummary))
-    ..append(editTaskElement(tasksummary));
+    ..append(editTaskElement(tasksummary))
+    ..onClick.listen((e) => div.classes.toggle('hideedittask'));
+  
   return div;
 }
 
