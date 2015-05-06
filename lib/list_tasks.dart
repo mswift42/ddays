@@ -4,7 +4,7 @@ import 'dart:html';
 import 'package:ddays/storageservice.dart' show loadFromStorage;
 
 // singleTaskElement returns a List Element that has
-//  a paragraphelement as a child node. The text of 
+//  a paragraphelement as a child node. The text of
 // the paragraphelement is set to the parameter 'tasksummary'.
 LIElement singleTaskElement(String tasksummary) {
   LIElement li = new LIElement();
@@ -14,11 +14,13 @@ LIElement singleTaskElement(String tasksummary) {
     ..classes.add('summarytext');
   li
     ..classes.add('singletask')
+    ..onClick
+        .listen((e) => li.parent.children[1].classes.toggle('hideedittask'))
     ..append(p);
   return li;
 }
 
-// editTaskElement returns a List Element that as an 
+// editTaskElement returns a List Element that as an
 // TextInput Element as a child node. The value of
 //  the textinput element is set to the given parameter tasksummary.
 LIElement editTaskElement(String tasksummary) {
@@ -41,13 +43,12 @@ DivElement taskContainer(String tasksummary) {
   div
     ..classes.add('taskcontainer')
     ..append(singleTaskElement(tasksummary))
-    ..append(editTaskElement(tasksummary))
-    ..onClick.listen((e) => div.classes.toggle('hideedittask'));
-  
+    ..append(editTaskElement(tasksummary));
+
   return div;
 }
 
-// append for each task in tasks a taskContainer 
+// append for each task in tasks a taskContainer
 // element to div '#listtasks'.
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
