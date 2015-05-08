@@ -17,6 +17,12 @@ class Task {
   Task(this.summary, [this.scheduled=null]) {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
+  Task.fromJson(String json) {
+    Map data = json.parse(json);
+    var sched = data['scheduled'];
+    summary = data['summary'];
+    scheduled = (sched.trim() == '') ? null : new DateTime(sched);
+  }
 
   void addNote(TaskNote note) {
     tasknotes.add(note);
