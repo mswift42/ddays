@@ -1,7 +1,7 @@
 library list_tasks;
 
 import 'dart:html';
-import 'package:ddays/storageservice.dart' show loadFromStorage;
+import 'package:ddays/storageservice.dart' as st;
 
 // singleTaskElement returns a List Element that has
 //  a paragraphelement as a child node. The text of
@@ -34,6 +34,10 @@ LIElement editTaskElement(String tasksummary) {
     ..value = tasksummary
     ..classes.add('summarytext');
   fe
+    ..onSubmit
+    .listen((e) {
+          
+        })
     ..append(ti);
   li
     ..classes.add('singletask')
@@ -58,7 +62,7 @@ DivElement taskContainer(String tasksummary) {
 // element to div '#listtasks'.
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
-  List tl = loadFromStorage();
+  List tl = st.loadFromStorage();
   tl.forEach((i) => div.append(taskContainer(i['summary'])));
 }
 
