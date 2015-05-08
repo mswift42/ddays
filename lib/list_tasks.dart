@@ -36,7 +36,7 @@ LIElement editTaskElement(String tasksummary) {
   fe
     ..onSubmit
     .listen((e) {
-          st.EditItemInStorage(ti.value);
+          st.editItemInStorage(ti.value);
           li.parent.children[0].classes.toggle('hidesingletask');
           li.classes.toggle('hideedittask');
         })
