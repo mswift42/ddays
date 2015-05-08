@@ -29,13 +29,16 @@ LIElement singleTaskElement(String tasksummary) {
 LIElement editTaskElement(String tasksummary) {
   LIElement li = new LIElement();
   TextInputElement ti = new TextInputElement();
+  FormElement fe = new FormElement();
   ti
     ..value = tasksummary
     ..classes.add('summarytext');
+  fe
+    ..append(ti);
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
-    ..append(ti);
+    ..append(fe);
   return li;
 }
 
