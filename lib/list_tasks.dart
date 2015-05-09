@@ -6,11 +6,11 @@ import 'package:ddays/storageservice.dart' as st;
 // singleTaskElement returns a List Element that has
 //  a paragraphelement as a child node. The text of
 // the paragraphelement is set to the parameter 'tasksummary'.
-LIElement singleTaskElement(String tasksummary) {
+LIElement singleTaskElement(Task task) {
   LIElement li = new LIElement();
   ParagraphElement p = new ParagraphElement();
   p
-    ..text = tasksummary
+    ..text = task.summary
     ..classes.add('summarytext');
   li
     ..classes.add('singletask')
@@ -26,12 +26,12 @@ LIElement singleTaskElement(String tasksummary) {
 // editTaskElement returns a List Element that as an
 // TextInput Element as a child node. The value of
 //  the textinput element is set to the given parameter tasksummary.
-LIElement editTaskElement(String tasksummary) {
+LIElement editTaskElement(Task task) {
   LIElement li = new LIElement();
   TextInputElement ti = new TextInputElement();
   FormElement fe = new FormElement();
   ti
-    ..value = tasksummary
+    ..value = task.summary
     ..classes.add('summarytext');
   fe
     ..onSubmit
