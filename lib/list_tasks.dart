@@ -50,12 +50,12 @@ LIElement editTaskElement(Task task) {
 
 // taskContainer returns a Div Element with the
 // child nodes of singleTaskElement and editTaskElement.
-DivElement taskContainer(String tasksummary) {
+DivElement taskContainer(Task task) {
   DivElement div = new DivElement();
   div
     ..classes.add('taskcontainer')
-    ..append(singleTaskElement(tasksummary))
-    ..append(editTaskElement(tasksummary));
+    ..append(singleTaskElement(task))
+    ..append(editTaskElement(task));
 
   return div;
 }
