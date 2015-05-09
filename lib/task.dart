@@ -1,6 +1,8 @@
 
 library task;
 
+import 'dart:convert';
+
 class TaskNote {
   String notebody;
   TaskNote(this.notebody);
@@ -18,9 +20,10 @@ class Task {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
   Task.fromJson(String json) {
-    Map data = json.parse(json);
+    Map data = JSON.decode(json);
     var sched = data['scheduled'];
     summary = data['summary'];
+    timestamp = int.parse(data['timestamp']);
     scheduled = (sched.trim() == '') ? null : new DateTime(sched);
   }
 
