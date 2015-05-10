@@ -8,7 +8,8 @@ void main() {
     expect(li is LIElement, true);
   });
   test('sinlgeTaskElement returns a LIElement with correct p children', () {
-  LIElement st = singleTaskElement('task1');
+    t1 = new Task('task1');
+  LIElement st = singleTaskElement(t1);
   expect(st.children[0].text, 'task1');
   expect(st.classes.contains('singletask'),true);
   expect(st.children[0].classes.contains('summarytext'),true);
