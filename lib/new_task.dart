@@ -14,7 +14,7 @@ void saveTaskHandler(Event e) {
   saveToStorage({"summary": task.summary,
     "scheduled" : task.scheduled, "timestamp" : task.timestamp});
   summary.value = '';
-  insertTask(task.summary);
+  insertTask(task);
   } 
   summary.value = '';
 }
