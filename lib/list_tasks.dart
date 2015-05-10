@@ -71,7 +71,7 @@ void displayTasks() {
 }
 
 // insert Task into displayed tasklist at index 0;
-void insertTask(String tasksummary) {
-  DivElement div = taskContainer(tasksummary);
+void insertTask(Task task) {
+  DivElement div = taskContainer(task);
   querySelector('#listtasks').children.insert(0, div);
 }
