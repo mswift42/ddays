@@ -31,20 +31,23 @@ void main() {
     expect(li2.children[0].text, 'other task');
   });
   test('inserted tasks should be retrievable by their classname "singletask"', () {
-    insertTask('more tasks');
+    var t1 = new Task('more tasks');
+    insertTask(t1);
     var retrieved = querySelector('.singletask');
     expect(retrieved.children[0].text, 'more tasks');
   });
   test('editTaskElement returns a li element', () {
-    var et = editTaskElement('t1');
+    var t1 = new Task('t1');
+    var et = editTaskElement(t1);
     expect(et is LIElement, true);
   });
   test('editTaskElement returns a LIElement with an textinput children.', () {
-    var et = editTaskElement('t1');
+    var t1 = new Task('t1');
+    var et = editTaskElement(t1);
     expect(et.classes.contains('singletask'), true);
     expect(et.classes.contains('hideedittask'), true);
-    expect(et.children[0].value, 't1');
-    expect(et.children[0].classes.contains('summarytext'), true);    
+    expect(et.children[0].children[0].value, 't1');
+    expect(et.children[0].children[0].classes.contains('summarytext'), true);    
   });
   
   
