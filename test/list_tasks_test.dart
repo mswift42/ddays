@@ -15,15 +15,18 @@ void main() {
   expect(st.children[0].text, 'task1');
   expect(st.classes.contains('singletask'),true);
   expect(st.children[0].classes.contains('summarytext'),true);
-  LIElement st2 = singleTaskElement('');
+  var t2 = new Task('');
+  LIElement st2 = singleTaskElement(t2);
   expect(st2.children[0].text, '');
   expect(st2.children[0].classes.contains('summarytext'),true);
   });
   test('insertTask should prepend a singleTaskElement into #listtasks children.',() {
-    insertTask('some task');
+    var t1 = new Task('some task');
+    insertTask(t1);
     var li = querySelector('#listtasks').children[0];
     expect(li.children[0].text, 'some task');
-    insertTask('other task');
+    var t2 = new Task('other task');
+    insertTask(t2);
     var li2 = querySelector('#listtasks').children[0];
     expect(li2.children[0].text, 'other task');
   });
