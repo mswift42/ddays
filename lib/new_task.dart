@@ -17,5 +17,4 @@ void saveTaskHandler(Event e) {
   insertTask(task.summary);
   } 
   summary.value = '';
-  
 }

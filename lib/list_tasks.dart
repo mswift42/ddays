@@ -1,6 +1,8 @@
+
 library list_tasks;
 
 import 'dart:html';
+import 'package:ddays/task.dart' show Task;
 import 'package:ddays/storageservice.dart' as st;
 
 // singleTaskElement returns a List Element that has
