@@ -2,7 +2,7 @@
 library list_tasks;
 
 import 'dart:html';
-import 'package:ddays/task.dart' show Task;
+import 'package:ddays/task.dart' show Task, fromJson;
 import 'package:ddays/storageservice.dart' as st;
 
 // singleTaskElement returns a List Element that has
@@ -67,7 +67,9 @@ DivElement taskContainer(Task task) {
 void displayTasks() {
   DivElement div = querySelector('#listtasks');
   List tl = st.loadFromStorage();
-  tl.forEach((i) => div.append(taskContainer(i['summary'])));
+  tl.forEach((i) {
+        div.append(taskContainer(i));
+      });
 }
 
 // insert Task into displayed tasklist at index 0;
