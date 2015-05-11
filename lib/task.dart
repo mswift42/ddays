@@ -25,7 +25,6 @@ class Task {
     summary = data['summary'];
     timestamp = data['timestamp'];
     scheduled = data['scheduled'];
-
   }
 
   void addNote(TaskNote note) {
