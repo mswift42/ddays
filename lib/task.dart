@@ -23,8 +23,9 @@ class Task {
     Map data = json;
     var sched = data['scheduled'];
     summary = data['summary'];
-    timestamp = int.parse(data['timestamp']);
-    scheduled = (sched.trim() == '') ? null : new DateTime(sched);
+    timestamp = data['timestamp'];
+    scheduled = data['scheduled'];
+
   }
 
   void addNote(TaskNote note) {
