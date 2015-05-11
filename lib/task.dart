@@ -19,8 +19,8 @@ class Task {
   Task(this.summary, [this.scheduled=null]) {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
-  Task.fromJson(String json) {
-    Map data = JSON.decode(json);
+  Task.fromJson(json) {
+    Map data = json;
     var sched = data['scheduled'];
     summary = data['summary'];
     timestamp = int.parse(data['timestamp']);
