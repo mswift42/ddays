@@ -1,3 +1,0 @@
-library tasks;
-
-List tasklist = [];
