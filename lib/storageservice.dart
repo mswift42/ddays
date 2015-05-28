@@ -34,6 +34,7 @@ List<Task> loadFromStorage() {
 void deleteItemInStorage(item) {
   var storedlist =
       loadFromStorage().where((i) => i.timestamp != item.timestamp);
+      tasklist = storedlist;
   window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
 }
 
@@ -44,6 +45,7 @@ void editItemInStorage(Task task) {
       i['summary'] = task.summary;
     }
   });
+  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
 }
 // delete localStorage key.
 void deleteStorage() {
