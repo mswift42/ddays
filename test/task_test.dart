@@ -10,7 +10,7 @@ void main() {
     var t2 = new Task('task2', new DateTime(2015,1,1));
     expect(t2.scheduled.month, 1);
   });
-  test('the timestamp of a newer Task should bigger than the older one',() {
+  test('the timestamp of a newer Task should be bigger than the older one',() {
     var t1 = new Task('task1');
     var t2 = new Task('task2');
     expect(t1.timestamp <= t2.timestamp, true);

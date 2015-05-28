@@ -43,7 +43,7 @@ LIElement editTaskElement(Task task) {
           li.classes.toggle('hideedittask');
         })
     ..append(ti);
-  li
+li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
     ..append(fe);

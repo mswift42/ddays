@@ -15,6 +15,7 @@ void saveTaskHandler(Event e) {
     "scheduled" : task.scheduled, "timestamp" : task.timestamp});
   summary.value = '';
   insertTask(task);
+  
   } 
   summary.value = '';
 }
