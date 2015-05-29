@@ -65,8 +65,9 @@ DivElement taskContainer(Task task) {
 // append for each task in tasks a taskContainer
 // element to div '#listtasks'.
 void displayTasks() {
+  st.loadFromStorage();
   DivElement div = querySelector('#listtasks');
-  List tl = st.loadFromStorage();
+  List tl = st.tasklist;
   tl.forEach((i) {
         div.append(taskContainer(i));
       });

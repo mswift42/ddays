@@ -8,11 +8,21 @@ final String STORAGE_KEY = 'ddays';
 
 List<Task> tasklist = [];
 
+void serializeAndSave(List<Task> tasks) {
+  List tasklist = [];
+  tasks.forEach((i) {
+    tasklist.add({"summary" : i.summary,
+    "timestamp" : i.timestamp,
+    "scheduled" : i.scheduled});
+  });
+  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
+}
+
 // add an item to a given List, then save
 // this list in localStorage with the key 'STORAGE_KEY'.
 void saveToStorage(item) {
   tasklist.add(item);
-  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
+  serializeAndSave(tasklist);
 }
 
 // restore a to localstorage, under key 'STORAGE_KEY',
