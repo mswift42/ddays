@@ -1,4 +1,3 @@
-
 library list_tasks;
 
 import 'dart:html';
@@ -14,14 +13,6 @@ LIElement singleTaskElement(Task task) {
   p
     ..text = task.summary
     ..classes.add('summarytext');
-  li
-    ..classes.add('singletask')
-    ..onClick
-        .listen((e) {
-    li.parent.children[1].classes.toggle('hideedittask');
-    li.classes.toggle('hidesingletask');
-  })
-    ..append(p);
   return li;
 }
 
@@ -36,14 +27,13 @@ LIElement editTaskElement(Task task) {
     ..value = task.summary
     ..classes.add('summarytext');
   fe
-    ..onSubmit
-    .listen((e) {
-          st.editItemInStorage(task);
-          li.parent.children[0].classes.toggle('hidesingletask');
-          li.classes.toggle('hideedittask');
-        })
+    ..onSubmit.listen((e) {
+      st.editItemInStorage(task);
+      li.parent.children[0].classes.toggle('hidesingletask');
+      li.classes.toggle('hideedittask');
+    })
     ..append(ti);
-li
+  li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
     ..append(fe);
@@ -69,12 +59,18 @@ void displayTasks() {
   DivElement div = querySelector('#listtasks');
   List tl = st.tasklist;
   tl.forEach((i) {
-        div.append(taskContainer(i));
-      });
+    div.append(taskContainer(i));
+  });
 }
 
 // insert Task into displayed tasklist at index 0;
 void insertTask(Task task) {
   DivElement div = taskContainer(task);
   querySelector('#listtasks').children.insert(0, div);
+}
+
+DivElement taskCategory(String category) {
+  DivElement div = new DivElement();
+  div.classes.add('categorycontainer');
+  return div;
 }
