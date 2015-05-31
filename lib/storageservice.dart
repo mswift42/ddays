@@ -11,9 +11,11 @@ List<Task> tasklist = [];
 void serializeAndSave(List<Task> tasks) {
   List tasklist = [];
   tasks.forEach((i) {
-    tasklist.add({"summary" : i.summary,
-    "timestamp" : i.timestamp,
-    "scheduled" : i.scheduled});
+    tasklist.add({
+      "summary": i.summary,
+      "timestamp": i.timestamp,
+      "scheduled": i.scheduled
+    });
   });
   window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
 }
@@ -32,29 +34,28 @@ void loadFromStorage() {
     List<Task> tasks = [];
     List stored = JSON.decode(window.localStorage[STORAGE_KEY]);
     stored.forEach((i) {
-          var t = new Task.fromJson(i);
-          tasks.add(t);
-        });
+      var t = new Task.fromJson(i);
+      tasks.add(t);
+    });
     tasklist = tasks;
   }
 }
 
 // delete a item from local Storage object with key 'STORAGE_KEY'.
 void deleteItemInStorage(item) {
-  var storedlist =
-      tasklist.where((i) => i.timestamp != item.timestamp);
-      tasklist = storedlist;
-  window.localStorage[STORAGE_KEY] = JSON.encode(storedlist);
+  var storedlist = tasklist.where((i) => i.timestamp != item.timestamp);
+  tasklist = storedlist;
+  serializeAndSave(tasklist);
 }
 
 // edit an item in local Storage object 'STORAGE_KEY'.
 void editItemInStorage(Task task) {
   tasklist.forEach((i) {
-    if (i['timestamp'] == task.timestamp) {
-      i['summary'] = task.summary;
+    if (i.timestamp == task.timestamp) {
+      i.summary = task.summary;
     }
   });
-  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
+  serializeAndSave(tasklist);
 }
 // delete localStorage key.
 void deleteStorage() {
