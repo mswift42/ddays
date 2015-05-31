@@ -1,6 +1,7 @@
 library task;
 
 import 'dart:convert';
+import 'package:ddays/taskcategory.dart' show TaskCategory;
 
 class TaskNote {
   String notebody;
@@ -14,7 +15,7 @@ class Task {
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
   int timestamp;
-  Set<String> taskcategories = new Set();
+  Set<TaskCategory> taskcategories = new Set();
   Task(this.summary, [this.scheduled=null]) {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
@@ -30,10 +31,10 @@ class Task {
     tasknotes.add(note);
   }
   
-  void addCategory(String cat ) {
+  void addCategory(TaskCategory cat ) {
     taskcategories.add(cat);
   }
-  void removeCategory(String cat) {
+  void removeCategory(TaskCategory cat) {
     taskcategories.remove(cat);
   }
 }
