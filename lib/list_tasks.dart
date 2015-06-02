@@ -75,6 +75,7 @@ DivElement taskCategory(String category, String background) {
   p.text = category;
   div
     ..append(p)
-    ..classes.add('categorycontainer');
+    ..classes.add('categorycontainer')
+    ..style.background = background;
   return div;
 }
