@@ -69,8 +69,12 @@ void insertTask(Task task) {
   querySelector('#listtasks').children.insert(0, div);
 }
 
-DivElement taskCategory(String category) {
+DivElement taskCategory(String category, String background) {
   DivElement div = new DivElement();
-  div.classes.add('categorycontainer');
+  ParagraphElement p = new ParagraphElement();
+  p.text = category;
+  div
+    ..append(p)
+    ..classes.add('categorycontainer');
   return div;
 }
