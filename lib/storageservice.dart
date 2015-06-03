@@ -53,6 +53,7 @@ void editItemInStorage(Task task) {
   tasklist.forEach((i) {
     if (i.timestamp == task.timestamp) {
       i.summary = task.summary;
+      i.scheduled = task.scheduled;
     }
   });
   serializeAndSave(tasklist);
