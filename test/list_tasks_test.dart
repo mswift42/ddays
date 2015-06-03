@@ -11,16 +11,18 @@ void main() {
   });
   test('sinlgeTaskElement returns a LIElement with correct p children', () {
     var t1 = new Task('task1');
-  LIElement st = singleTaskElement(t1);
-  expect(st.children[0].text, 'task1');
-  expect(st.classes.contains('singletask'),true);
-  expect(st.children[0].classes.contains('summarytext'),true);
-  var t2 = new Task('');
-  LIElement st2 = singleTaskElement(t2);
-  expect(st2.children[0].text, '');
-  expect(st2.children[0].classes.contains('summarytext'),true);
+    LIElement st = singleTaskElement(t1);
+    expect(st.children[0].text, 'task1');
+    expect(st.classes.contains('singletask'), true);
+    expect(st.children[0].classes.contains('summarytext'), true);
+    var t2 = new Task('');
+    LIElement st2 = singleTaskElement(t2);
+    expect(st2.children[0].text, '');
+    expect(st2.children[0].classes.contains('summarytext'), true);
   });
-  test('insertTask should prepend a singleTaskElement into #listtasks children.',() {
+  test(
+      'insertTask should prepend a singleTaskElement into #listtasks children.',
+      () {
     var t1 = new Task('some task');
     insertTask(t1);
     var li = querySelector('#listtasks').children[0];
@@ -30,7 +32,8 @@ void main() {
     var li2 = querySelector('#listtasks').children[0];
     expect(li2.children[0].text, 'other task');
   });
-  test('inserted tasks should be retrievable by their classname "singletask"', () {
+  test('inserted tasks should be retrievable by their classname "singletask"',
+      () {
     var t1 = new Task('more tasks');
     insertTask(t1);
     var retrieved = querySelector('.singletask');
@@ -47,8 +50,14 @@ void main() {
     expect(et.classes.contains('singletask'), true);
     expect(et.classes.contains('hideedittask'), true);
     expect(et.children[0].children[0].value, 't1');
-    expect(et.children[0].children[0].classes.contains('summarytext'), true);    
+    expect(et.children[0].children[0].classes.contains('summarytext'), true);
   });
-  
-  
+  test('taskCategory returns a Div Element', () {
+    var tc1 = taskCategory('work', '#221122');
+    expect(tc1 is DivElement, true);
+  });
+  test('taskCategory returns a Div Element with a Para. Element children.', () {
+    var tc1 = taskCategory('work', '#221122');
+    expect(tc1.childNodes[0] is ParagraphElement, true);
+  });
 }
