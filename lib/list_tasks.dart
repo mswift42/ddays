@@ -13,7 +13,9 @@ LIElement singleTaskElement(Task task) {
   p
     ..text = task.summary
     ..classes.add('summarytext');
-  li.append(p);
+  li
+    ..classes.add('singletask')
+    ..append(p);
   return li;
 }
 
