@@ -57,7 +57,7 @@ DivElement taskContainer(Task task) {
 void displayTasks() {
   st.loadFromStorage();
   DivElement div = querySelector('#listtasks');
-  List tl = st.tasklist;
+  List<Task> tl = st.tasklist;
   tl.forEach((i) {
     div.append(taskContainer(i));
   });
