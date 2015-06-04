@@ -9,8 +9,13 @@ void main() {
     var li = singleTaskElement(t1);
     expect(li is LIElement, true);
   });
+  test('singleTaskElement first children is a Paragraphelement', () {
+    Task t1 = new Task('task1');
+    LIElement st = singleTaskElement(t1);
+    expect(st.children[0] is ParagraphElement, true);
+  });
   test('sinlgeTaskElement returns a LIElement with correct p children', () {
-    var t1 = new Task('task1');
+    Task t1 = new Task('task1');
     LIElement st = singleTaskElement(t1);
     expect(st.children[0].text, 'task1');
     expect(st.classes.contains('singletask'), true);
