@@ -11,7 +11,8 @@ void saveTaskHandler(Event e) {
   InputElement summary = querySelector('[name="tsummary"]');
   if (summary.value.trim() != '') {
   Task task = new Task(summary.value.trim());
-  saveToStorage(task);
+  saveToStorage({"summary": task.summary,
+    "scheduled" : task.scheduled, "timestamp" : task.timestamp});
   summary.value = '';
   insertTask(task);
   
