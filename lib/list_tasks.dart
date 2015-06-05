@@ -35,7 +35,8 @@ LIElement editTaskElement(Task task) {
     ..classes.add('summarytext');
   fe
     ..onSubmit.listen((e) {
-      st.editItemInStorage(task);
+      e.preventDefault();
+      st.editItemInStorage(task, ti.value);
       li.parent.children[0].classes.toggle('hidesingletask');
       li.classes.toggle('hideedittask');
     })
