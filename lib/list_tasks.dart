@@ -40,6 +40,7 @@ LIElement editTaskElement(Task task) {
       st.editItemInStorage(task);
       li.parent.children[0].classes.toggle('hidesingletask');
       li.classes.toggle('hideedittask');
+      li.parent.children[0].children[0].text = ti.value;
     })
     ..append(ti);
   li
