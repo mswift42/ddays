@@ -9,15 +9,15 @@ final String STORAGE_KEY = 'ddays';
 List<Task> tasklist = [];
 
 void serializeAndSave(List<Task> tasks) {
-  List tasklist = [];
+  List resultlist = [];
   tasks.forEach((i) {
-    tasklist.add({
+    resultlist.add({
       "summary": i.summary,
       "timestamp": i.timestamp,
       "scheduled": i.scheduled
     });
   });
-  window.localStorage[STORAGE_KEY] = JSON.encode(tasklist);
+  window.localStorage[STORAGE_KEY] = JSON.encode(resultlist);
 }
 
 // add an item to a given List, then save
