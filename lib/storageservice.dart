@@ -20,10 +20,10 @@ void serializeAndSave(List<Task> tasks) {
   window.localStorage[STORAGE_KEY] = JSON.encode(resultlist);
 }
 
-// add an item to a given List, then save
+// add task to tasklist, then save
 // this list in localStorage with the key 'STORAGE_KEY'.
-void saveToStorage(item) {
-  tasklist.add(item);
+void saveToStorage(Task task) {
+  tasklist.add(task);
   serializeAndSave(tasklist);
 }
 
