@@ -49,10 +49,10 @@ void deleteItemInStorage(item) {
 }
 
 // edit an item in local Storage object 'STORAGE_KEY'.
-void editItemInStorage(Task task, String summary) {
+void editItemInStorage(Task task) {
   tasklist.forEach((i) {
     if (i.timestamp == task.timestamp) {
-      i.summary = summary;
+      i.summary = task.summary;
       i.scheduled = task.scheduled;
     }
   });
