@@ -30,6 +30,7 @@ LIElement editTaskElement(Task task) {
   LIElement li = new LIElement();
   TextInputElement ti = new TextInputElement();
   FormElement fe = new FormElement();
+  ButtonElement button = new ButtonElement();
   ti
     ..value = task.summary
     ..classes.add('summarytext');
@@ -42,7 +43,13 @@ LIElement editTaskElement(Task task) {
       li.classes.toggle('hideedittask');
       li.parent.children[0].children[0].text = ti.value;
     })
+    ..append(button)
     ..append(ti);
+  button
+    ..onClick.listen((e) {
+          st.deleteItemInStorage(task);
+        })
+    ..text = "Delete";
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
