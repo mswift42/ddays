@@ -48,6 +48,7 @@ LIElement editTaskElement(Task task) {
   button
     ..onClick.listen((e) {
           st.deleteItemInStorage(task);
+          li.parent.remove();
         })
     ..text = "Delete";
   li
