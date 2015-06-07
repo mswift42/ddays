@@ -43,7 +43,7 @@ void loadFromStorage() {
 
 // delete a item from local Storage object with key 'STORAGE_KEY'.
 void deleteItemInStorage(item) {
-  var storedlist = tasklist.where((i) => i.timestamp != item.timestamp);
+  List<Task> storedlist = tasklist.where((i) => i.timestamp != item.timestamp).toList();
   tasklist = storedlist;
   serializeAndSave(tasklist);
 }
