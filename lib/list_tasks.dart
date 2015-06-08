@@ -44,7 +44,6 @@ LIElement editTaskElement(Task task) {
       li.parent.children[0].children[0].text = ti.value;
     })
     ..append(ti)
-    ..append(button);
   button
     ..onClick.listen((e) {
           st.deleteItemInStorage(task);
@@ -54,6 +53,7 @@ LIElement editTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
+    ..append(button)
     ..append(fe);
   return li;
 }
