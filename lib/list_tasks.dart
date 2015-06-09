@@ -78,7 +78,7 @@ LIElement editTaskElement(Task task) {
 // close icon and a button with text 'Delele'
 DivElement deleteButton() {
   DivElement div = new DivElement();
-  HtmlElement icon = new HtmlElement('<i class="icon icon-close"></i>');
+  HtmlElement icon = new Element.html('<i class="icon icon-close"></i>');
   ButtonElement button = new ButtonElement();
   button
     ..classes.add('deletebutton')
