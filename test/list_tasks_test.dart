@@ -85,4 +85,14 @@ void main() {
     expect(icon.classes.contains('icon'), true);
     expect(icon.classes.contains('icon-close'),true);
   });
+  test('deleteButtons button is the 2nd child.', () {
+    var d1 = deleteButton();
+    expect(d1.children[1] is ButtonElement, true);
+  });
+  test('deleteButtons button has correct class and text', () {
+    var d1 = deleteButton();
+    ButtonElement button = d1.children[1];
+    expect(button.classes.contains('deletebutton'),true);
+    expect(button.text, 'Delete');
+  });
 }
