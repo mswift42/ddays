@@ -16,9 +16,9 @@ LIElement singleTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..onClick.listen((e) {
-    li.classes.toggle('hidesingletask');
-    li.parent.children[1].classes.toggle('hideedittask');
-  })
+      li.classes.toggle('hidesingletask');
+      li.parent.children[1].classes.toggle('hideedittask');
+    })
     ..append(p);
   return li;
 }
@@ -33,11 +33,15 @@ LIElement editTaskElement(Task task) {
   ButtonElement button = new ButtonElement();
   ti
     ..value = task.summary
-    ..classes.add('summarytext');
+    ..classes.add('summarytext')
+    ..addEventListener('blur', (e) {
+      li.classes.toggle('hideedittask');
+      li.parent.children[0].classes.toggle('hidesingletask');
+    });
   fe
     ..onSubmit.listen((e) {
       e.preventDefault();
-      task.summary = ti.value;   
+      task.summary = ti.value;
       st.editItemInStorage(task);
       li.parent.children[0].classes.toggle('hidesingletask');
       li.classes.toggle('hideedittask');
@@ -46,9 +50,9 @@ LIElement editTaskElement(Task task) {
     ..append(ti);
   button
     ..onClick.listen((e) {
-          st.deleteItemInStorage(task);
-          li.parent.remove();
-        })
+      st.deleteItemInStorage(task);
+      li.parent.remove();
+    })
     ..text = "Delete";
   li
     ..classes.add('singletask')
