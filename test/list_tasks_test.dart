@@ -67,7 +67,7 @@ void main() {
   });
   test('taskCategory adds a class categorycontainer', () {
     var tc1 = taskCategory('work', '#221122');
-    expect(tc1.classes.contains('categorycontainer'),true);
+    expect(tc1.classes.contains('categorycontainer'), true);
     var tc2 = taskCategory('', '');
     expect(tc2.classes.contains('categorycontainer'), true);
   });

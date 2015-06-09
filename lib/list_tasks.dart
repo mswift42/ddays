@@ -4,6 +4,19 @@ import 'dart:html';
 import 'package:ddays/task.dart' show Task, fromJson;
 import 'package:ddays/storageservice.dart' as st;
 
+
+// taskContainer returns a Div Element with the
+// child nodes of singleTaskElement and editTaskElement.
+DivElement taskContainer(Task task) {
+  DivElement div = new DivElement();
+  div
+    ..classes.add('taskcontainer')
+    ..append(singleTaskElement(task))
+    ..append(editTaskElement(task));
+
+  return div;
+}
+
 // singleTaskElement returns a List Element that has
 //  a paragraphelement as a child node. The text of
 // the paragraphelement is set to the parameter 'tasksummary'.
@@ -16,7 +29,6 @@ LIElement singleTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..onClick.listen((e) {
-      li.parent.children[1].children[1].children[0].setAttribute("autofocus","true");
       li.classes.toggle('hidesingletask');
       li.parent.children[1].classes.toggle('hideedittask');
     })
@@ -33,9 +45,8 @@ LIElement editTaskElement(Task task) {
   FormElement fe = new FormElement();
   ButtonElement button = new ButtonElement();
   ti
-    ..autofocus = true
     ..value = task.summary
-    ..classes.add('summarytext')
+    ..classes.addAll(['editinputform', 'summarytext'])
     ..addEventListener('blur', (e) {
       li.classes.toggle('hideedittask');
       li.parent.children[0].classes.toggle('hidesingletask');
@@ -63,19 +74,6 @@ LIElement editTaskElement(Task task) {
     ..append(fe);
   return li;
 }
-
-// taskContainer returns a Div Element with the
-// child nodes of singleTaskElement and editTaskElement.
-DivElement taskContainer(Task task) {
-  DivElement div = new DivElement();
-  div
-    ..classes.add('taskcontainer')
-    ..append(singleTaskElement(task))
-    ..append(editTaskElement(task));
-
-  return div;
-}
-
 // append for each task in tasks a taskContainer
 // element to div '#listtasks'.
 void displayTasks() {
