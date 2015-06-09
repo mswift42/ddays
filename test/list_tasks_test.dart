@@ -71,4 +71,8 @@ void main() {
     var tc2 = taskCategory('', '');
     expect(tc2.classes.contains('categorycontainer'), true);
   });
+  test('deleteButton is a DivElement', () {
+    var d1 = deleteButton();
+    expect(d1 is DivElement, true);
+  });
 }
