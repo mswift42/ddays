@@ -74,6 +74,20 @@ LIElement editTaskElement(Task task) {
     ..append(fe);
   return li;
 }
+// deleteButton - DivElement containing a
+// close icon and a button with text 'Delele'
+DivElement deleteButton() {
+  DivElement div = new DivElement();
+  HtmlElement icon = new HtmlElement('<i class="icon icon-close"></i>');
+  ButtonElement button = new ButtonElement();
+  button
+    ..classes.add('deletebutton')
+    ..text = ('Delete');
+  div
+    ..append(icon)
+    ..append(button);
+  return div;
+}
 // append for each task in tasks a taskContainer
 // element to div '#listtasks'.
 void displayTasks() {
