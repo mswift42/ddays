@@ -75,4 +75,8 @@ void main() {
     var d1 = deleteButton();
     expect(d1 is DivElement, true);
   });
+  test('deleButton has 2 children elements.', () {
+    var d1 = deleteButton();
+    expect(d1.children.length, 2);
+  });
 }
