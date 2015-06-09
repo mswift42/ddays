@@ -16,6 +16,7 @@ LIElement singleTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..onClick.listen((e) {
+      li.parent.children[1].children[1].children[0].setAttribute("autofocus","true");
       li.classes.toggle('hidesingletask');
       li.parent.children[1].classes.toggle('hideedittask');
     })
@@ -32,6 +33,7 @@ LIElement editTaskElement(Task task) {
   FormElement fe = new FormElement();
   ButtonElement button = new ButtonElement();
   ti
+    ..autofocus = true
     ..value = task.summary
     ..classes.add('summarytext')
     ..addEventListener('blur', (e) {
