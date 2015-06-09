@@ -84,6 +84,7 @@ DivElement deleteButton() {
     ..classes.add('deletebutton')
     ..text = ('Delete');
   div
+    ..classes.add('delebuttonelement')
     ..append(icon)
     ..append(button);
   return div;
