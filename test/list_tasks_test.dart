@@ -75,8 +75,14 @@ void main() {
     var d1 = deleteButton();
     expect(d1 is DivElement, true);
   });
-  test('deleButton has 2 children elements.', () {
+  test('deleteButton has 2 children elements.', () {
     var d1 = deleteButton();
     expect(d1.children.length, 2);
+  });
+  test('deleteButtons icon has correct classes.', () {
+    var d1 = deleteButton();
+    HtmlElement icon = d1.children[0];
+    expect(icon.classes.contains('icon'), true);
+    expect(icon.classes.contains('icon-close'),true);
   });
 }
