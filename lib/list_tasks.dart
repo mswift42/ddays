@@ -54,7 +54,8 @@ LIElement editTaskElement(Task task) {
     ..onKeyUp((KeyboardEvent e) {
       if (e.keyCode == KeyCode.ENTER) {
         st.editItemInStorage(task);
-        toggleVisibility();
+        li.parent.children[0].classes.toggle('hidesingletask');
+        li.classes.toggle('hidesingletask');
         li.parent.children[0].children[0].text= ti.value;
       }
   });
@@ -78,7 +79,7 @@ LIElement editTaskElement(Task task) {
     ..classes.add('singletask')
     ..classes.add('hideedittask')
     ..append(button)
-    ..append(fe);
+    ..append(ti);
   return li;
 }
 // deleteButton - DivElement containing a
