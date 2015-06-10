@@ -54,9 +54,9 @@ void main() {
     var et = editTaskElement(t1);
     expect(et.classes.contains('singletask'), true);
     expect(et.classes.contains('hideedittask'), true);
-    expect(et.children[0].children[0].value, 't1');
-    expect(et.children[0].children[0].classes.contains('summarytext'), true);
+    expect(et.children[1] is TextInputElement, true);
   });
+
   test('taskCategory returns a Div Element', () {
     var tc1 = taskCategory('work', '#221122');
     expect(tc1 is DivElement, true);
