@@ -42,7 +42,6 @@ LIElement singleTaskElement(Task task) {
 LIElement editTaskElement(Task task) {
   LIElement li = new LIElement();
   TextInputElement ti = new TextInputElement();
-  FormElement fe = new FormElement();
   ButtonElement button = new ButtonElement();
   ti
     ..value = task.summary
@@ -51,24 +50,15 @@ LIElement editTaskElement(Task task) {
       li.classes.toggle('hideedittask');
       li.parent.children[0].classes.toggle('hidesingletask');
     })
-    ..onKeyUp((KeyboardEvent e) {
+    ..addEventListener('keyup', (KeyboardEvent e) {
       if (e.keyCode == KeyCode.ENTER) {
+        task.summary = ti.value;
         st.editItemInStorage(task);
         li.parent.children[0].classes.toggle('hidesingletask');
         li.classes.toggle('hidesingletask');
         li.parent.children[0].children[0].text= ti.value;
       }
   });
-  fe
-    ..onSubmit.listen((e) {
-      e.preventDefault();
-      task.summary = ti.value;
-      st.editItemInStorage(task);
-      li.parent.children[0].classes.toggle('hidesingletask');
-      li.classes.toggle('hideedittask');
-      li.parent.children[0].children[0].text = ti.value;
-    })
-    ..append(ti);
   button
     ..onClick.listen((e) {
       st.deleteItemInStorage(task);
