@@ -56,7 +56,6 @@ void main() {
     expect(et.classes.contains('hideedittask'), true);
     expect(et.children[1] is TextInputElement, true);
   });
-
   test('taskCategory returns a Div Element', () {
     var tc1 = taskCategory('work', '#221122');
     expect(tc1 is DivElement, true);
