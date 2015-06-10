@@ -68,7 +68,6 @@ LIElement editTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
-//    ..append(button)
     ..append(deleteButton(task))
     ..append(ti);
   return li;
