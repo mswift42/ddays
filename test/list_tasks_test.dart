@@ -71,7 +71,8 @@ void main() {
     expect(tc2.classes.contains('categorycontainer'), true);
   });
   test('deleteButton is a DivElement', () {
-    var d1 = deleteButton();
+    Task t1 = new Task('task1');
+    var d1 = deleteButton(t1);
     expect(d1 is DivElement, true);
   });
   test('deleteButton has 2 children elements.', () {
