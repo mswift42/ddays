@@ -50,7 +50,14 @@ LIElement editTaskElement(Task task) {
     ..addEventListener('blur', (e) {
       li.classes.toggle('hideedittask');
       li.parent.children[0].classes.toggle('hidesingletask');
-    });
+    })
+    ..onKeyUp((KeyboardEvent e) {
+      if (e.keyCode == KeyCode.ENTER) {
+        st.editItemInStorage(task);
+        toggleVisibility();
+        li.parent.children[0].children[0].text= ti.value;
+      }
+  });
   fe
     ..onSubmit.listen((e) {
       e.preventDefault();
