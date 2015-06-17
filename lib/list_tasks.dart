@@ -4,7 +4,6 @@ import 'dart:html';
 import 'package:ddays/task.dart' show Task, fromJson;
 import 'package:ddays/storageservice.dart' as st;
 
-
 // taskContainer returns a Div Element with the
 // child nodes of singleTaskElement and editTaskElement.
 DivElement taskContainer(Task task) {
@@ -46,19 +45,18 @@ LIElement editTaskElement(Task task) {
   ti
     ..value = task.summary
     ..classes.addAll(['editinputform', 'summarytext'])
-    ..addEventListener('blur', (e) {
-      li.classes.toggle('hideedittask');
-      li.parent.children[0].classes.toggle('hidesingletask');
-    })
     ..addEventListener('keyup', (KeyboardEvent e) {
       if (e.keyCode == KeyCode.ENTER) {
         task.summary = ti.value;
         st.editItemInStorage(task);
         li.parent.children[0].classes.toggle('hidesingletask');
-        li.classes.toggle('hidesingletask');
-        li.parent.children[0].children[0].text= ti.value;
+        li.classes.toggle('hideedittask');
+        li.parent.children[0].children[0].text = ti.value;
+      } else if (e.keyCode == KeyCode.ESC) {
+        li.parent.children[0].classes.toggle('hidesingletask');
+        li.classes.toggle('hideedittask');
       }
-  });
+    });
   button
     ..onClick.listen((e) {
       st.deleteItemInStorage(task);
@@ -84,7 +82,7 @@ DivElement deleteButton(task) {
     ..onClick.listen((e) {
       st.deleteItemInStorage(task);
       div.parent.parent.remove();
-  });
+    });
   div
     ..classes.add('delebuttonelement')
     ..append(icon)
