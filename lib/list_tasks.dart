@@ -57,12 +57,6 @@ LIElement editTaskElement(Task task) {
         li.classes.toggle('hideedittask');
       }
     });
-  button
-    ..onClick.listen((e) {
-      st.deleteItemInStorage(task);
-      li.parent.remove();
-    })
-    ..text = "Delete";
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
