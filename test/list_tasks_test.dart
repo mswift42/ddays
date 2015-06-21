@@ -109,4 +109,10 @@ void main() {
     DivElement div = dateElement(d);
     expect(div.children[0] is DateInputElement, true);
   });
+  test('dateElement takes a DateTime object.', () {
+    DateTime d = new DateTime.now();
+    DivElement div = dateElement(d);
+    DateInputElement di = div.children[0];
+    expect(di.valueAsDate is DateTime, true);
+  });
 }
