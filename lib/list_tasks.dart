@@ -63,7 +63,7 @@ LIElement editTaskElement(Task task) {
     ..classes.add('hideedittask')
     ..append(deleteButton(task))
     ..append(ti)
-    ..append(dateElement(new DateTime.now()));
+    ..append(dateElement(task));
   return li;
 }
 // dateElement - DivElement containing
@@ -71,7 +71,9 @@ LIElement editTaskElement(Task task) {
 DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   DateInputElement di = new DateInputElement();
-  di.valueAsDate = date;
+  if (task.scheduled != null) {
+    di.valueAsDate = task.scheduled;
+  }
   div
     ..classes.add('datecontainer')
     ..append(di);
