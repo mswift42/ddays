@@ -61,7 +61,8 @@ LIElement editTaskElement(Task task) {
     ..classes.add('singletask')
     ..classes.add('hideedittask')
     ..append(deleteButton(task))
-    ..append(ti);
+    ..append(ti)
+    ..append(dateElement(task.scheduled));
   return li;
 }
 // dateElement - DivElement containing
