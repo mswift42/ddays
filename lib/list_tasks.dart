@@ -57,17 +57,18 @@ LIElement editTaskElement(Task task) {
         li.classes.toggle('hideedittask');
       }
     });
+
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
     ..append(deleteButton(task))
     ..append(ti)
-    ..append(dateElement(task.scheduled));
+    ..append(dateElement(new DateTime.now()));
   return li;
 }
 // dateElement - DivElement containing
 // a date input element and a sed scheduled label.
-DivElement dateElement(DateTime date) {
+DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   DateInputElement di = new DateInputElement();
   di.valueAsDate = date;
