@@ -104,4 +104,9 @@ void main() {
     DivElement div = dateElement(d);
     expect(div is DivElement, true);
   });
+  test('dateElement has a DateInputElement child', () {
+    DateTime d = new DateTime.now();
+    DivElement div = dateElement(d);
+    expect(div.children[0] is DateInputElement, true);
+  });
 }
