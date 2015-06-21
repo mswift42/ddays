@@ -17,6 +17,7 @@
 
 html,
 body {
+  background-color: #fdfdfd;
     width: 100%;
   height: 100%;
   margin: 0;
@@ -333,7 +334,7 @@ sass-hidden {
     
     body {		
         overflow-y: scroll;
-        background-color: fdfdfd;
+        background-color: #fdfdfd;
     }		
 }
 .newtaskform {
@@ -358,4 +359,11 @@ sass-hidden {
 }
 li {
   list-style-type: none;
+}
+input[type=text] {
+  box-shadow:
+  inset 0 0 8px  rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 0 10px 0;
 }
