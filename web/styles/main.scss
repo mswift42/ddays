@@ -30,7 +30,7 @@ body {
     position: relative;		
     font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;		
     font-weight: 300;		
-    background-color: #fff;		
+    background-color: #fafafa;
     box-sizing: border-box;		
     min-height: 100%;		
 }		
@@ -339,6 +339,9 @@ sass-hidden {
     margin-top:5vh;
     width:80%;
 }
+.taskcontainer {
+    background-color: rgba(255,255,255,90);
+}
 .tasksummarycontainer {
     padding: 1em;
 }
@@ -346,3 +349,4 @@ sass-hidden {
 .taskview {
     padding:1em;
 }
+
