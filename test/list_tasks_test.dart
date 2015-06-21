@@ -100,18 +100,19 @@ void main() {
     expect(button.text, 'Delete');
   });
   test('dateElement is a div element', () {
-    DateTime d = new DateTime.now();
-    DivElement div = dateElement(d);
+    Task t1 = new Task('task1');
+    DivElement div = dateElement(t1);
     expect(div is DivElement, true);
   });
   test('dateElement has a DateInputElement child', () {
-    DateTime d = new DateTime.now();
-    DivElement div = dateElement(d);
+    Task t1 = new Task('task1');
+    DivElement div = dateElement(t1);
     expect(div.children[0] is DateInputElement, true);
   });
   test('dateElement takes a DateTime object.', () {
-    DateTime d = new DateTime.now();
-    DivElement div = dateElement(d);
+    Task t1 = new Task('task1');
+    t1.scheduled = new DateTime.now();
+    DivElement div = dateElement(t1);
     DateInputElement di = div.children[0];
     expect(di.valueAsDate is DateTime, true);
   });
