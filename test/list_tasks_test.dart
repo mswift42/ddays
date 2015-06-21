@@ -99,4 +99,9 @@ void main() {
     expect(button.classes.contains('deletebutton'),true);
     expect(button.text, 'Delete');
   });
+  test('dateElement is a div element', () {
+    DateTime d = new DateTime.now();
+    DivElement div = dateElement(d);
+    expect(div is DivElement, true);
+  });
 }
