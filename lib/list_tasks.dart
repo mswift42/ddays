@@ -64,6 +64,17 @@ LIElement editTaskElement(Task task) {
     ..append(ti);
   return li;
 }
+// dateElement - DivElement containing
+// a date input element and a sed scheduled label.
+DivElement dateElement(DateTime date) {
+  DivElement div = new DivElement();
+  DateInputElement di = new DateInputElement();
+  di.valueAsDate = date;
+  div
+    ..classes.add('datecontainer')
+    ..append(di);
+  return div;
+}
 // deleteButton - DivElement containing a
 // close icon and a button with text 'Delele'
 DivElement deleteButton(task) {
