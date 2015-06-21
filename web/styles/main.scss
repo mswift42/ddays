@@ -332,7 +332,8 @@ sass-hidden {
     }		
     
     body {		
-        overflow-y: scroll;		
+        overflow-y: scroll;
+        background-color: fdfdfd;
     }		
 }
 .newtaskform {
@@ -343,6 +344,10 @@ sass-hidden {
     background-color: rgba(255,255,255,90);
     margin-top:1vh;
     margin-bottom:1vh;
+    padding: 2em;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
 }
 .tasksummarycontainer {
     padding: 1em;
