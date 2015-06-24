@@ -16,4 +16,4 @@ transformers:
     style: compressed
 - autoprefixer_transformer:
     browsers:
-    - "last 2 versions"
+    - last 2 versions
