@@ -70,6 +70,7 @@ LIElement editTaskElement(Task task) {
 // a date input element and a sed scheduled label.
 DivElement dateElement(Task task) {
   DivElement div = new DivElement();
+  SpanElement span = new SpanElement();
   DateInputElement di = new DateInputElement();
   if (task.scheduled != null) {
     di.valueAsDate = task.scheduled;
