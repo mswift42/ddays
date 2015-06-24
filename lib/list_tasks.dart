@@ -71,6 +71,7 @@ LIElement editTaskElement(Task task) {
 DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   SpanElement span = new SpanElement();
+  HtmlElement icon = new Element.html('<i class="icon icon-calendar"></i>');
   DateInputElement di = new DateInputElement();
   if (task.scheduled != null) {
     di.valueAsDate = task.scheduled;
