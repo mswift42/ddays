@@ -71,7 +71,7 @@ LIElement editTaskElement(Task task) {
 DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   SpanElement span = new SpanElement();
-  HtmlElement icon = new Element.html('<i class="icon icon-calendar"></i>');
+  HtmlElement icon = new Element.html('<i class="fa fa-calendar"></i>');
   DateInputElement di = new DateInputElement();
   if (task.scheduled != null) {
     di.valueAsDate = task.scheduled;
@@ -91,7 +91,7 @@ DivElement dateElement(Task task) {
 // close icon and a button with text 'Delele'
 DivElement deleteButton(task) {
   DivElement div = new DivElement();
-  HtmlElement icon = new Element.html('<i class="icon icon-close"></i>');
+  HtmlElement icon = new Element.html('<i class="fa fa-close"></i>');
   ButtonElement button = new ButtonElement();
   button
     ..classes.add('deletebutton')
