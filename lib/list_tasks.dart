@@ -77,9 +77,9 @@ DivElement dateElement(Task task) {
     di.valueAsDate = task.scheduled;
   }
   di.classes.add('hidedateinput');
+  icon.onClick.listen((e) => di.classes.toggle('hidedateinput'));
   span
     ..classes.add('calendaricon')
-    ..onClick.listen((e) => icon.classes.toggle('hidedateinput'))
     ..append(icon);
   div
     ..classes.add('datecontainer')
