@@ -61,7 +61,7 @@ LIElement editTaskElement(Task task) {
   li
     ..classes.add('singletask')
     ..classes.add('hideedittask')
-    ..append(deleteButton(task))
+    ..append(deleteIcon(task))
     ..append(ti)
     ..append(dateElement(task));
   return li;
@@ -72,9 +72,9 @@ DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   SpanElement span = new SpanElement();
   HtmlElement icon = new Element.html('<i class="fa fa-calendar"></i>');
-  DateInputElement di = new DateInputElement();
+  TextInputElement di = new TextInputElement();
   if (task.scheduled != null) {
-    di.valueAsDate = task.scheduled;
+    di.value = task.scheduled.toString();
   }
   di.classes.add('hidedateinput');
   icon.onClick.listen((e) => di.classes.toggle('hidedateinput'));
@@ -89,7 +89,7 @@ DivElement dateElement(Task task) {
 }
 // deleteButton - DivElement containing a
 // close icon and a button with text 'Delele'
-DivElement deleteButton(task) {
+DivElement deleteIcon(task) {
   DivElement div = new DivElement();
   HtmlElement icon = new Element.html('<i class="fa fa-close"></i>');
   ButtonElement button = new ButtonElement();

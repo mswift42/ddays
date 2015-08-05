@@ -72,29 +72,29 @@ void main() {
   });
   test('deleteButton is a DivElement', () {
     Task t1 = new Task('task1');
-    var d1 = deleteButton(t1);
+    var d1 = deleteIcon(t1);
     expect(d1 is DivElement, true);
   });
   test('deleteButton has 2 children elements.', () {
     Task t1 = new Task('task1');
-    var d1 = deleteButton(t1);
+    var d1 = deleteIcon(t1);
     expect(d1.children.length, 2);
   });
   test('deleteButtons icon has correct classes.', () {
     Task t1 = new Task('task1');
-    var d1 = deleteButton(t1);
+    var d1 = deleteIcon(t1);
     HtmlElement icon = d1.children[0];
     expect(icon.classes.contains('icon'), true);
     expect(icon.classes.contains('icon-close'),true);
   });
   test('deleteButtons button is the 2nd child.', () {
     Task t1 = new Task('task1');
-    var d1 = deleteButton(t1);
+    var d1 = deleteIcon(t1);
     expect(d1.children[1] is ButtonElement, true);
   });
   test('deleteButtons button has correct class and text', () {
     Task t1 = new Task('task1');
-    var d1 = deleteButton(t1);
+    var d1 = deleteIcon(t1);
     ButtonElement button = d1.children[1];
     expect(button.classes.contains('deletebutton'),true);
     expect(button.text, 'Delete');
