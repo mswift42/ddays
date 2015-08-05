@@ -87,18 +87,6 @@ void main() {
     expect(icon.classes.contains('icon'), true);
     expect(icon.classes.contains('icon-close'),true);
   });
-  test('deleteIcons button is the 2nd child.', () {
-    Task t1 = new Task('task1');
-    var d1 = deleteIcon(t1);
-    expect(d1.children[1] is ButtonElement, true);
-  });
-  test('deleteButtons button has correct class and text', () {
-    Task t1 = new Task('task1');
-    var d1 = deleteIcon(t1);
-    ButtonElement button = d1.children[1];
-    expect(button.classes.contains('deletebutton'),true);
-    expect(button.text, 'Delete');
-  });
   test('dateElement is a div element', () {
     Task t1 = new Task('task1');
     DivElement div = dateElement(t1);
