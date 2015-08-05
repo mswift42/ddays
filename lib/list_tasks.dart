@@ -88,22 +88,18 @@ DivElement dateElement(Task task) {
   return div;
 }
 // deleteButton - DivElement containing a
-// close icon and a button with text 'Delele'
+// close icon with an handler, that
+// deletes said task on click.
 DivElement deleteIcon(task) {
   DivElement div = new DivElement();
   HtmlElement icon = new Element.html('<i class="fa fa-close"></i>');
-  ButtonElement button = new ButtonElement();
-  button
-    ..classes.add('deletebutton')
-    ..text = ('Delete')
+  div
+    ..classes.add('delebuttonelement')
+    ..append(icon)
     ..onClick.listen((e) {
       st.deleteItemInStorage(task);
       div.parent.parent.remove();
     });
-  div
-    ..classes.add('delebuttonelement')
-    ..append(icon)
-    ..append(button);
   return div;
 }
 // append for each task in tasks a taskContainer
