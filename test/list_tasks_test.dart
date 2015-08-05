@@ -70,24 +70,24 @@ void main() {
     var tc2 = taskCategory('', '');
     expect(tc2.classes.contains('categorycontainer'), true);
   });
-  test('deleteButton is a DivElement', () {
+  test('deleteIcon is a DivElement', () {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
     expect(d1 is DivElement, true);
   });
-  test('deleteButton has 2 children elements.', () {
+  test('deleteIcon has 2 children elements.', () {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
     expect(d1.children.length, 2);
   });
-  test('deleteButtons icon has correct classes.', () {
+  test('deleteIcons icon has correct classes.', () {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
     HtmlElement icon = d1.children[0];
     expect(icon.classes.contains('icon'), true);
     expect(icon.classes.contains('icon-close'),true);
   });
-  test('deleteButtons button is the 2nd child.', () {
+  test('deleteIcons button is the 2nd child.', () {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
     expect(d1.children[1] is ButtonElement, true);
