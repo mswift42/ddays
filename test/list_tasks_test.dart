@@ -75,10 +75,10 @@ void main() {
     var d1 = deleteIcon(t1);
     expect(d1 is DivElement, true);
   });
-  test('deleteIcon has 2 children elements.', () {
+  test('deleteIcon has 1 children elements.', () {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
-    expect(d1.children.length, 2);
+    expect(d1.children.length, 1);
   });
   test('deleteIcons icon has correct classes.', () {
     Task t1 = new Task('task1');
