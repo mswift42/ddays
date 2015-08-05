@@ -84,8 +84,8 @@ void main() {
     Task t1 = new Task('task1');
     var d1 = deleteIcon(t1);
     HtmlElement icon = d1.children[0];
-    expect(icon.classes.contains('icon'), true);
-    expect(icon.classes.contains('icon-close'),true);
+    expect(icon.classes.contains('fa'), true);
+    expect(icon.classes.contains('fa-close'),true);
   });
   test('dateElement is a div element', () {
     Task t1 = new Task('task1');
