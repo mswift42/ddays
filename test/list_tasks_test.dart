@@ -97,6 +97,11 @@ void main() {
     DivElement div = dateElement(t1);
     expect(div.children[1] is TextInputElement, true);
   });
+  test('dateElement has a span element child', () {
+    Task t1 = new Task('task1');
+    DivElement div = dateElement(t1);
+    expect(div.children[0] is SpanElement, true);
+  });
   test('dateElement takes a DateTime object.', () {
     Task t1 = new Task('task1');
     t1.scheduled = new DateTime.now();
