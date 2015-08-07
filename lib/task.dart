@@ -15,16 +15,17 @@ class Task {
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
   int timestamp;
+  bool done;
   Set<TaskCategory> taskcategories = new Set();
   Task(this.summary, [this.scheduled=null]) {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
   }
   Task.fromJson(json) {
     Map data = json;
-    var sched = data['scheduled'];
     summary = data['summary'];
     timestamp = data['timestamp'];
     scheduled = data['scheduled'];
+    done = data["done"];
   }
 
   void addNote(TaskNote note) {
