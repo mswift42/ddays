@@ -92,10 +92,10 @@ void main() {
     DivElement div = dateElement(t1);
     expect(div is DivElement, true);
   });
-  test('dateElement has a DateInputElement child', () {
+  test('dateElement has a TextInputElement child', () {
     Task t1 = new Task('task1');
     DivElement div = dateElement(t1);
-    expect(div.children[0] is DateInputElement, true);
+    expect(div.children[1] is TextInputElement, true);
   });
   test('dateElement takes a DateTime object.', () {
     Task t1 = new Task('task1');
