@@ -72,19 +72,19 @@ DivElement dateElement(Task task) {
   DivElement div = new DivElement();
   SpanElement span = new SpanElement();
   HtmlElement icon = new Element.html('<i class="fa fa-calendar"></i>');
-  TextInputElement di = new TextInputElement();
+  TextInputElement ti = new TextInputElement();
   if (task.scheduled != null) {
-    di.value = task.scheduled.toString();
+    ti.value = task.scheduled.toString();
   }
-  di.classes.add('hidedateinput');
-  icon.onClick.listen((e) => di.classes.toggle('hidedateinput'));
+  ti.classes.add('hidedateinput');
+  icon.onClick.listen((e) => ti.classes.toggle('hidedateinput'));
   span
     ..classes.add('calendaricon')
     ..append(icon);
   div
     ..classes.add('datecontainer')
     ..append(span)
-    ..append(di);
+    ..append(ti);
   return div;
 }
 // deleteButton - DivElement containing a
