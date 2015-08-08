@@ -19,6 +19,7 @@ class Task {
   Set<TaskCategory> taskcategories = new Set();
   Task(this.summary, [this.scheduled=null]) {
     this.timestamp = new DateTime.now().millisecondsSinceEpoch;
+    this.done = false;
   }
   Task.fromJson(json) {
     Map data = json;
