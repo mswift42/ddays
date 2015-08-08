@@ -1,5 +1,6 @@
 
 import 'package:ddays/task.dart';
+import 'package:ddays/taskcategory.dart';
 import "package:test/test.dart";
 
 
@@ -25,13 +26,15 @@ void main() {
        t1.addNote(n1);
        expect(t1.tasknotes[0].notebody, 'first note');
   });
-  test('addCategory shoud add a category to taskcategories', () {
+  test('addCategory should add a category to taskcategories', () {
     var t1 = new Task('task1');
-    t1.addCategory('work');
-    expect(t1.taskcategories.contains('work'), true);
-    t1.addCategory('travel');
-    expect(t1.taskcategories.contains('travel'), true);
-    expect(t1.taskcategories.length,2);
+    var work = new TaskCategory('work', '#221122');
+    t1.addCategory(work);
+    expect(t1.taskcategories.contains(work), true);
+    var travel = new TaskCategory('travel', '#333333');
+    t1.addCategory(travel);
+    expect(t1.taskcategories.contains(travel), true);
+    expect(t1.taskcategories.length, 2);
   });
   test('removeCategory should remove the correct category', () {
     var t1 = new Task('task1');
