@@ -38,18 +38,15 @@ void main() {
   });
   test('removeCategory should remove the correct category', () {
     var t1 = new Task('task1');
-    ['work','travel', 'family', 'private'].forEach((i) => t1.addCategory(i));
-    expect(t1.taskcategories.contains('private'), true);
-    t1.removeCategory('family');
-    expect(t1.taskcategories.contains('family'), false);
-    expect(t1.taskcategories.contains('work'), true);
-    t1.removeCategory('work');
-    expect(t1.taskcategories.contains('work'), false);
-    expect(t1.taskcategories.contains('private'), true);
-    t1.removeCategory('private');
-    expect(t1.taskcategories.contains('private'),false);
-    expect(t1.taskcategories.contains('travel'), true);
-    t1.removeCategory('travel');
+    var work = new TaskCategory('work', '#221122');
+    var travel = new TaskCategory('travel', '#000000');
+    [work, travel].forEach((i) => t1.addCategory(i));
+    expect(t1.taskcategories.contains(work), true);
+    t1.removeCategory(work);
+    expect(t1.taskcategories.contains(work), false);
+    expect(t1.taskcategories.contains(travel), true);
+    t1.removeCategory(travel);
+    expect(t1.taskcategories.contains(travel), false);
     expect(t1.taskcategories.length,0);
   });
  
