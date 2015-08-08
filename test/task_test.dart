@@ -10,6 +10,10 @@ void main() {
     var t2 = new Task('task2', new DateTime(2015,1,1));
     expect(t2.scheduled.month, 1);
   });
+  test('task.done is initialised to false', () {
+    var t1 = new Task('task1');
+    expect(t1.done, false);
+  });
   test('the timestamp of a newer Task should be bigger than the older one',() {
     var t1 = new Task('task1');
     var t2 = new Task('task2');
