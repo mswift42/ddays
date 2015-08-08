@@ -35,6 +35,9 @@ void main() {
     t1.addCategory(travel);
     expect(t1.taskcategories.contains(travel), true);
     expect(t1.taskcategories.length, 2);
+    expect(t1.taskcategories.any((i) => i.name == 'work'), true);
+    expect(t1.taskcategories.any((i) => i.name == 'travel'), true);
+    expect(t1.taskcategories.any((i) => i.name == 'family'), false);
   });
   test('removeCategory should remove the correct category', () {
     var t1 = new Task('task1');
