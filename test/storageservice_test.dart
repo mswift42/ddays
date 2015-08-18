@@ -11,4 +11,10 @@ void main() {
     loadFromStorage();
     expect(tasklist[0].summary, 'task1');
   });
+  test('tasks get serialised and saved', () {
+    Task t1 = new Task('task1');
+    serializeAndSave([t1]);
+    loadFromStorage();
+    expect(tasklist[0].summary, 'task1');
+  });
 }
