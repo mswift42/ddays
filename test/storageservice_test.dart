@@ -11,6 +11,15 @@ void main() {
     loadFromStorage();
     expect(tasklist[0].summary, 'task1');
   });
+  test('deleteStorage clears local Storage', () {
+    deleteStorage();
+    expect(window.localStorage[STORAGE_KEY],null);
+    Task t1 = new Task('task1');
+    serializeAndSave([t1]);
+    expect(window.localStorage.containsKey(STORAGE_KEY), true);
+    deleteStorage();
+    expect(window.localStorage[STORAGE_KEY], null);
+  });
   test('tasks get serialised and saved', () {
     Task t1 = new Task('task1');
     serializeAndSave([t1]);
