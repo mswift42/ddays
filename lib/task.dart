@@ -1,6 +1,7 @@
 library task;
 
 import 'dart:convert';
+import 'package:uuid/uuid.dart';
 import 'package:ddays/taskcategory.dart' show TaskCategory;
 
 class TaskNote {
@@ -14,17 +15,18 @@ class Task {
   String summary;
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
-  int timestamp;
+  Uuid uuid;
   bool done;
   Set<TaskCategory> taskcategories = new Set();
   Task(this.summary, [this.scheduled=null]) {
-    this.timestamp = new DateTime.now().millisecondsSinceEpoch;
+    var uuid = new Uuid();
+    this.uuid = uuid.v4();
     this.done = false;
   }
   Task.fromJson(json) {
     Map data = json;
     summary = data['summary'];
-    timestamp = data['timestamp'];
+    uuid = data['uuid'];
     scheduled = data['scheduled'];
     done = data["done"];
   }
