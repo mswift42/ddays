@@ -15,10 +15,10 @@ void main() {
     var t1 = new Task('task1');
     expect(t1.done, false);
   });
-  test('the timestamp of a newer Task should be bigger than the older one',() {
+  test('the uuids of two task are different',() {
     var t1 = new Task('task1');
     var t2 = new Task('task2');
-    expect(t1.timestamp <= t2.timestamp, true);
+    expect(t1.uuid != t2.uuid, true);
   });
   test('addNote should add notes to tasknotes list.', () {
     var t1 = new Task('task1');

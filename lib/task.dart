@@ -15,7 +15,7 @@ class Task {
   String summary;
   List<TaskNote> tasknotes = [];
   DateTime scheduled;
-  Uuid uuid;
+  String uuid;
   bool done;
   Set<TaskCategory> taskcategories = new Set();
   Task(this.summary, [this.scheduled=null]) {
