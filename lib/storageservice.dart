@@ -13,7 +13,7 @@ void serializeAndSave(List<Task> tasks) {
   tasks.forEach((i) {
     resultlist.add({
       "summary": i.summary,
-      "timestamp": i.timestamp,
+      "uuid": i.uuid,
       "scheduled": i.scheduled
     });
   });
@@ -43,7 +43,7 @@ void loadFromStorage() {
 
 // delete a item from local Storage object with key 'STORAGE_KEY'.
 void deleteItemInStorage(item) {
-  List<Task> storedlist = tasklist.where((i) => i.timestamp != item.timestamp).toList();
+  List<Task> storedlist = tasklist.where((i) => i.uuid != item.uuid).toList();
   tasklist = storedlist;
   serializeAndSave(tasklist);
 }
@@ -51,7 +51,7 @@ void deleteItemInStorage(item) {
 // edit an item in local Storage object 'STORAGE_KEY'.
 void editItemInStorage(Task task) {
   tasklist.forEach((i) {
-    if (i.timestamp == task.timestamp) {
+    if (i.uuid == task.uuid) {
       i.summary = task.summary;
       i.scheduled = task.scheduled;
     }
